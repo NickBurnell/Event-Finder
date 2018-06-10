@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html>
-<head lang="en" ng-app="EventsApp">
+<html lang="en" ng-app="EventApp">
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Stub Pub</title>
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 <body>
     <!--slogan: your tickets on tap-->
     <!--events R us, for all your adult activities-->
+    <nav>
+        <a href="#!/search-criteria">Search Events</a>
+        <a href="#!/events-list">Events List</a>
+        <a href="#!/favorites-list">Favorites list</a>
+    </nav>
     <ng-view></ng-view>
 
-    <script src='https://code.angularjs.org/1.6.5/angular.min.js'></script>
-    <script src='https://code.angularjs.org/1.6.5/angular-route.min.js'></script>
+    <script src="https://code.angularjs.org/1.6.5/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.5/angular-route.min.js"></script>
     <script src="JS/module.js"></script>
+    <script src="JS/config.js"></script>
     <script src="JS/components/search-criteria.js"></script>
     <script src="JS/components/favorites-list.js"></script>
     <script src="JS/components/events-list.js"></script>
     <script src="JS/components/events-details.js"></script>
     <script src="JS/service.js"></script>
-    <script src="JS/config.js"></script>
 </body>
 </html>

@@ -1,14 +1,17 @@
 "use strict";
 
 const eventsList = {
+    bindings: {
+        result: "<"
+    },
     template: `
     
     `,
-    controller: ["EventsService", function(EventsService) {
+    controller: ["EventRequest", function(EventRequest) {
         const vm = this;
     }]
 }
 
 angular
-    .module('EventApp')
+    .module("EventApp")
     .component("eventsList", eventsList);

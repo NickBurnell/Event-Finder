@@ -1,12 +1,34 @@
 "use strict";
+// , $location
+function EventRequest($http) {
+    let finalData = {};
+    let favorites = [];
+    
+    const getEventsRequest = (keyword, state, city) => {
+        
+        if(state === undefined){
+            state = "";
+        }
 
-function EventsService($http, $location) {
+        if(city === undefined){
+            city = "";
+        }
 
-    const getEventsRequest = () => {
+        if(keyword === undefined){
+            keyword = "";
+        }
+
         return $http({
             method: 'GET',
-            url: ``,
+            url: `https://app.ticketmaster.com/discovery/v2/events?apikey=e8r3GMDPAlkPXLGn7mExQtMHoEpFGG32&keyword=${keyword}&city=${city}&countryCode=US&stateCode=${state}`,
+            async:true,
+            dataType: "json",
+            // keyword
+            // state
+            // city
         }).then((response) => {
+            console.log(response);
+            console.log(finalData);
             finalData = response;
             return finalData;
         }, (error) => {
@@ -14,13 +36,17 @@ function EventsService($http, $location) {
 
         });
     }
-
+    const returnResults = () => {
+        console.log(finalData);
+        return finalData;
+    }
 
     return {
-        getEventsRequest
+        getEventsRequest,
+        returnResults
     }
 }
 
 angular
     .module("EventApp")
-    .factory("EventsService", ["$http", EventsService]);
+    .factory("EventRequest", EventRequest);
